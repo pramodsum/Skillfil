@@ -509,3 +509,11 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.col-sm-3  {
+  width: 32%;
+  margin: 5px
+}
+
+.panel {
+}

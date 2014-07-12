@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS overrides - remove if you don't need it -->
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <title>Skillfill</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Skillfil</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <script type="in/Login">
+            Hello, <?js= firstName ?> <?js= lastName ?>.
+          </script>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<section id="todoapp">
+  <header id="header">
+    <h1 class="text-left"> Welcome <%=user%>! </h1>
+    <center>
+        <div class="container container-fluid">
+            <% for(int i = 0; i < results.length/3; i++) %>
+                <div class="row">
+                    <% for(int j = 0; j < 3 && (i*3+j) < results.length; j++) %>
+                        <div class="col-sm-3 panel panel-default">
+                          <div class="panel-body">
+                            <%- results[i*3+j] %>
+                          </div>
+                          <div class="panel-footer">Panel footer</div>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        <!-- <div class="row">
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+                <div class="col-sm-3 panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  <div class="panel-footer">Panel footer</div>
+                </div>
+            </div> -->
+        </div>
+    </center>
+  </header>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="javascripts/bootstrap/js/bootstrap.min.js"></script>
+<script src="javascripts/packery.pkgd.min.js"></script>
+</body>
+</html>
