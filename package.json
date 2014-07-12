@@ -17,7 +17,10 @@
     "nodemon": "^1.2.1",
     "request": "^2.37.0",
     "socket.io": "^1.0.6",
-    "googleapis": "^0.8.0"
+    "googleapis": "^0.8.0",
+    "ejs": "^1.0.0",
+    "passport": "^0.2.0",
+    "passport-linkedin-oauth2": "^1.1.1"
   },
   "description": "Skillfil ========",
   "main": "app.js",
