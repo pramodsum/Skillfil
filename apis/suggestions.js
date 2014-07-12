@@ -1,28 +1,31 @@
 /**
  * Actually grabs the coursera link through a Google custom search, but close enough
  */
- 
-var coursera = require('../apis/coursera');
 
-var skill = "data science";
-var coursera_course;
-var results = [];
-
-coursera.getCoursera(skill, function(course) {
-    results[results.length] = course;
-});
-
-console.log(coursera_course);
-
+var request = require("request");
 
 module.exports = {
 
     // var SEARCH = 'machine learning';
 
-    getSuggestions: function(SEARCH, callback) 
+    getCoursera: function(SEARCH, callback) 
     {
-        // Initializes API
-        callback(results);
+        var url = "https://api.coursera.org/api/catalog.v1/courses?fields=shortDescription,smallIcon,video&q=search&query=";
+        url = url.concat(SEARCH.split(' ').join('+'));
+        var results = new Array();
+        request({ uri: url }, function(error, response, body) {
+            if(error) {
+                console.log(error);
+                return;
+            }
+            var json = JSON.parse(body);
+            var elements = json.elements;
+            // console.log(elements);
+            elements.forEach(function(el, index) {
+                results[results.length] = el;
+                console.log(el['name']);
+            });
+            callback(results);
+        });
     }
-
 };

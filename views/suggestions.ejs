@@ -40,81 +40,23 @@
 
 <section id="todoapp">
   <header id="header">
-    <h1 class="text-left"> Welcome <%=user%>! </h1>
-    <center>
+    <h1>Welcome <%= user %></h1>
+    <center class="well" style="background-color: rgba(245, 245, 245, 0.2); border-color: transparent;">
+        <h3>According to my calculations, you should probably try one of the following courses</h3><br/>
         <div class="container container-fluid">
-            <% for(int i = 0; i < results.length/3; i++) %>
+            <% for(var i = 0; i < results.length/3; i++) { %>
                 <div class="row">
-                    <% for(int j = 0; j < 3 && (i*3+j) < results.length; j++) %>
+                    <% for(var j = 0; j < 3 && (i*3+j) < results.length; j++) { %>
                         <div class="col-sm-3 panel panel-default">
                           <div class="panel-body">
-                            <%- results[i*3+j] %>
+                            <img src='<%- results[i*3+j]['smallIcon'] %>'>
+                            <p><strong><a href='<%- course_url.concat(results[i*3+j]['shortName'])%>'><%- results[i*3+j]['name'] %></a></strong></p>
+                            <p><%- results[i*3+j]['shortDescription'] %></p>
                           </div>
-                          <div class="panel-footer">Panel footer</div>
                         </div>
-                    <% end %>
+                    <% } %>
                 </div>
-            <% end %>
-        <!-- <div class="row">
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="col-sm-3 panel panel-default">
-                  <div class="panel-body">
-                    Panel content
-                  </div>
-                  <div class="panel-footer">Panel footer</div>
-                </div>
-            </div> -->
+            <% } %>
         </div>
     </center>
   </header>

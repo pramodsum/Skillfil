@@ -77,7 +77,8 @@ input[type="checkbox"] {
 
 #todoapp h1 {
   position: relative;
-  /*top: -120px;*/
+  top: -35px;
+  line-height: 40px;
   width: 100%;
   font-size: 70px;
   font-weight: bold;
@@ -513,7 +514,4 @@ body {
 .col-sm-3  {
   width: 32%;
   margin: 5px
-}
-
-.panel {
 }

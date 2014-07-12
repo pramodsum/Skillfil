@@ -21,19 +21,14 @@ router.get('/google', function(req, res) {
     });
 })
 
-// a button should have action="/log-in"
-router.get('/profile', function(req, res) {
-    suggestions.getSuggestions(skill, function(results, err) {
-        if(err) {
-            res.render('suggestions', {
-                error: err
-            });
-        } else {
-            res.render('suggestions', {
-                user: 'Heisenberg',
-                results: results
-            });
-        }
+router.get('/suggestions', function(req, res) {
+    suggestions.getCoursera(skill, function(results) {
+        res.render('suggestions', {
+            user: 'Heisenberg',
+            results: results,
+            result: '',
+            course_url: 'https://www.coursera.org/course/'
+        });
     });
 })
 
