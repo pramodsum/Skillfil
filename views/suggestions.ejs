@@ -49,9 +49,9 @@
                     <% for(var j = 0; j < 3 && (i*3+j) < results.length; j++) { %>
                         <div class="col-sm-3 panel panel-default">
                           <div class="panel-body">
-                            <img src='<%- results[i*3+j]['smallIcon'] %>'>
+                            <img src='<%- results[i*3+j]['smallIcon'] %>' class="img-responsive" >
                             <p><strong><a href='<%- course_url.concat(results[i*3+j]['shortName'])%>'><%- results[i*3+j]['name'] %></a></strong></p>
-                            <p><%- results[i*3+j]['shortDescription'] %></p>
+                            <p class="text-justify"><%- results[i*3+j]['shortDescription'] %></p>
                           </div>
                         </div>
                     <% } %>
