@@ -3,9 +3,12 @@ var router = express.Router();
 var suggestions = require('../apis/suggestions');
 var khan = require('../apis/khan');
 
-var skill = "data science";
+var skill = "information retrieval";
 var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
 var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
+
+var skillSuggestions = new Array();
+var results= new Array();
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -24,20 +27,19 @@ router.get('/khan', function(req, res) {
 });
 
 router.get('/suggestions', function(req, res) {
-    var skills = ['machine learning', 'ruby'];
-    var skillSuggestions;
-    suggestions.getAdvancedData(skills, function(results)
+    var skills = ['information retrieval', 'python', 'java', 'data mining', 'c++', 'perl', 'linux', 'statistical'];
+    suggestions.getAdvancedData(skills, function(temp)
     {
         // var json = JSON.parse(results);
-        skillSuggestions = results['L1RankedSkills'];
+        skillSuggestions = temp['L2RankedSkills'];
         console.log(skillSuggestions);
         // searchResults = results;
     })
-    suggestions.getCoursera(skill, function(results) {
+    suggestions.getCoursera(skill, function(no2) {
         console.log(skillSuggestions.length);
         res.render('suggestions', {
-            user: 'Heisenberg',
-            results: results,
+            user: 'Sumedha',
+            results: no2,
             skillSuggestions: skillSuggestions,
             course_url: 'https://www.coursera.org/course/'
         });

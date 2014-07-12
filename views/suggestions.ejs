@@ -56,17 +56,17 @@
             <% for(var i = 0; i < skillSuggestions.length && i < 5; i++) { %>
                 <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-success"><%= skillSuggestions[i]['SkillName'] %></span></a>
             <% } %>
-            <br/>
+            <!-- <br/> -->
             <% if(skillSuggestions.length > 5) { %>
                 <% for(var i = 5; i < skillSuggestions.length && i < 10; i++) { %>
                     <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-warning"><%= skillSuggestions[i]['SkillName'] %></span></a>
                 <% } %>
-                <br/>
+                <!-- <br/> -->
                 <% if(skillSuggestions.length > 10) { %>
                     <% for(var i = 10; i < skillSuggestions.length && i < 15; i++) { %>
                         <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-danger"><%= skillSuggestions[i]['SkillName'] %></span></a>
                     <% } %>        
-                    <br/>            
+                    <!-- <br/>             -->
                     <% if(skillSuggestions.length > 15) { %>
                         <% for(var i = 15; i < skillSuggestions.length; i++) { %>
                             <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-default"><%= skillSuggestions[i]['SkillName'] %></span></a>
