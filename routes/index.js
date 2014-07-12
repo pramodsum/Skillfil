@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var suggestions = require('../apis/suggestions');
-
-var skill = "data science"
 var khan = require('../apis/khan');
+
+var skill = "data science";
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -31,5 +31,16 @@ router.get('/suggestions', function(req, res) {
         });
     });
 })
+
+router.get('/coursera', function(req, res) {
+    suggestions.getEducationSource('coursera', skill, function(results) {
+        // console.log(results);
+        console.log(results[0]);
+        console.log(results[1]);
+        res.render('coursera', {
+            course: results[0]
+        })
+    });
+}) 
 
 module.exports = router;

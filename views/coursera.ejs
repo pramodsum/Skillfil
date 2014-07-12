@@ -12,38 +12,15 @@
 
 <!--
 var course = 
-{   
-    kind: 'customsearch#result',
-    title: 'Machine Learning | Coursera',
-    htmlTitle: '<b>Machine Learning</b> | Coursera',
-    link: 'https://www.coursera.org/course/ml',
-    displayLink: 'www.coursera.org',
-    snippet: 'Machine learning is the science of getting computers to act without
-    being \nexplicitly programmed. In the past decade, machine learning has given us
-    self-\ndriving ...',
-    htmlSnippet: '<b>Machine learning</b> is the science of getting computers to a
-    ct without being <br>\nexplicitly programmed. In the past decade, <b>machine lea
-    rning</b> has given us self-<br>\ndriving&nbsp;...',
-    cacheId: 'fARu1uqBk0UJ',
-    formattedUrl: 'https://www.coursera.org/course/ml',
-    htmlFormattedUrl: 'https://www.coursera.org/course/ml',
-    pagemap:
-    { 
-        cse_image: [ [Object] ],
-        cse_thumbnail: [ [Object] ],
-        metatags: [ [Object] ] 
-    } 
+{
+    Title: "Courses | Coursera",
+    Url: "https://www.coursera.org/category/economics",
+    Rank: 1,
+    Snippet: "Take free online classes from 80+ top universities and organizations. Coursera is a social entrepreneurship company partnering with Stanford University, Yale ..."
 }
-
 -->
 </head>
 <body>
-
-<script> 
-console.log(\n\n\n);
-console.log(course);
-console.log(\n\n\n);
-</script>
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
@@ -73,11 +50,11 @@ console.log(\n\n\n);
 
 <section id="todoapp">
   <header id="header">
-        <h1> Welcome back, <%=course.title%>! </h1>
+        <h1> <%=course.Title%>! </h1>
     <center><div class="well text-center" style="width: 75%">
-        <%-course.htmlSnippet%>
+        <%-course.Snippet%>
         <br/>
-        <a href=<%=course.link%>> Link to Coursera course </a>
+        <a href=<%=course.Url%>> Link to Coursera course </a>
     </div></center>
   </header>
 </section>

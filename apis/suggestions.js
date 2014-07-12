@@ -27,5 +27,26 @@ module.exports = {
             });
             callback(results);
         });
+    },
+
+    getEducationSource : function(source, search, callback)
+    {
+        var endpoint = "http://10.16.20.34:8080/BingSearch.aspx?query=";
+        endpoint = endpoint.concat(source.split(' ').join('+'));
+        endpoint += "+";
+        endpoint = endpoint.concat(search.split(' ').join('+'));
+        
+        var results = new Array();
+        request({ uri: endpoint }, function(error, response, body) 
+        {
+            if(error) {
+                console.log(error);
+                return;
+            }
+            var json = JSON.parse(body);
+            // console.log(json);
+            callback(json);
+        });
     }
+
 };
