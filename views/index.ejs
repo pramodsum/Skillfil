@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Skillfill</title>
+    <title>Rendezvous</title>
     <!-- CSS overrides - remove if you don't need it -->
     <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap-responsive.min.css">
@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/custom.css">
     <link rel="stylesheet" href="/stylesheets/normalize.css">
-
-    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-      api_key: DXjUrY-9apre6gnyK080MpTIoIS4f38AleG08Y0kLM0DH2xeNQATIfDMuoisCMO_
-      onLoad: onLinkedInLoad
-      authorize: true
-    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -35,11 +29,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <script type="in/Login">
-                Hello, <?js= firstName ?> <?js= lastName ?>.
-              </script>
-            </li>
+            <li><a href="#">Log in with Linkedin</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -48,10 +38,8 @@
       <header id="header">
         <h1>Skillfil</h1>
       </header><br/><br/>
-      <div id="body" align="center">|
-              <script type="in/Login">
-                Hello, <?js= firstName ?> <?js= lastName ?>.
-              </script>|
+      <div id="body" align="center">
+        <% hi %>
       </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
