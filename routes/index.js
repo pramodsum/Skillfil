@@ -25,24 +25,27 @@ router.get('/khan', function(req, res) {
 
 router.get('/suggestions', function(req, res) {
     var skills = ['machine learning', 'ruby'];
-    var skillSuggestions;
+    var skillSuggestions = new Array();
     suggestions.getAdvancedData(skills, function(results)
     {
         // var json = JSON.parse(results);
         skillSuggestions = results['L1RankedSkills'];
-        console.log(skillSuggestions);
+        // console.log(skillSuggestions);
         // searchResults = results;
-    })
-    suggestions.getCoursera(skill, function(results) {
-        console.log(skillSuggestions.length);
+        skillSuggestions.forEach(function(skill, index) {
+            // console.log(skillSuggestions[i]);
+            suggestions.getCoursera(skill['SkillName'], function(results) {
+                console.log('RESULTS: ' + results);
+            });
+        });
         res.render('suggestions', {
             user: 'Heisenberg',
-            results: results,
+            results: [],
             skillSuggestions: skillSuggestions,
             course_url: 'https://www.coursera.org/course/'
         });
     });
-})
+});
 
 router.get('/coursera', function(req, res) {
     suggestions.getApiJsonResults(BING_ENDPOINT, 'coursera', skill, function(results) {
@@ -53,7 +56,7 @@ router.get('/coursera', function(req, res) {
             course: results[0]
         })
     });
-}) 
+});
 
 router.get('/data', function(req, res) {
     var skills = ['machine learning', 'ruby'];
@@ -63,6 +66,6 @@ router.get('/data', function(req, res) {
             results: results
         })
     })
-})
+});
 
 module.exports = router;

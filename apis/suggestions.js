@@ -27,6 +27,7 @@ io.on('connection', function (socket) {
     io.sockets.emit('user disconnected');
   });
 });
+
 var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
 var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
 
@@ -42,7 +43,6 @@ module.exports = {
         request({ uri: url }, function(error, response, body) {
             if(error) {
                 console.log(error);
-                return;
             }
             var json = JSON.parse(body);
             var elements = json.elements;
