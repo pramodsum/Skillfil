@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var suggestions = require('../apis/suggestions');
-var bing = require('binger');
 var khan = require('../apis/khan');
 
 var skill = "data science";
