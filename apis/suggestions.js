@@ -1,5 +1,7 @@
 /**
  * Actually grabs the coursera link through a Google custom search, but close enough
+ * http://10.16.20.34:8080/LookupSkills.aspx?UserSkills=data+science,machine+learning
+ * http://10.16.20.34:8080/BingSearch.aspx?query=machine+learning
  */
 
 var request = require("request");

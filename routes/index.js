@@ -24,11 +24,21 @@ router.get('/khan', function(req, res) {
 });
 
 router.get('/suggestions', function(req, res) {
+    var skills = ['machine learning', 'ruby'];
+    var skillSuggestions;
+    suggestions.getAdvancedData(skills, function(results)
+    {
+        // var json = JSON.parse(results);
+        skillSuggestions = results['L1RankedSkills'];
+        console.log(skillSuggestions);
+        // searchResults = results;
+    })
     suggestions.getCoursera(skill, function(results) {
+        console.log(skillSuggestions.length);
         res.render('suggestions', {
             user: 'Heisenberg',
             results: results,
-            result: '',
+            skillSuggestions: skillSuggestions,
             course_url: 'https://www.coursera.org/course/'
         });
     });

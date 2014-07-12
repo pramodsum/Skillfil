@@ -42,7 +42,31 @@
   <header id="header">
     <h1>Welcome <%= user %></h1>
     <center class="well" style="background-color: rgba(245, 245, 245, 0.2); border-color: transparent;">
-        <h3>According to my calculations, you should probably try one of the following courses</h3><br/>
+        <h3>Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn</h3><br/>
+        <div class="container container-fluid">
+            <% for(var i = 0; i < skillSuggestions.length && i < 5; i++) { %>
+                <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-success"><%= skillSuggestions[i]['SkillName'] %></span></a>
+            <% } %>
+            <br/>
+            <% if(skillSuggestions.length > 5) { %>
+                <% for(var i = 5; i < skillSuggestions.length && i < 10; i++) { %>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-warning"><%= skillSuggestions[i]['SkillName'] %></span></a>
+                <% } %>
+                <br/>
+                <% if(skillSuggestions.length > 10) { %>
+                    <% for(var i = 10; i < skillSuggestions.length && i < 15; i++) { %>
+                        <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-danger"><%= skillSuggestions[i]['SkillName'] %></span></a>
+                    <% } %>        
+                    <br/>            
+                    <% if(skillSuggestions.length > 15) { %>
+                        <% for(var i = 15; i < skillSuggestions.length; i++) { %>
+                            <a href="#" data-toggle="modal" data-target="#myModal"><span class="label label-default"><%= skillSuggestions[i]['SkillName'] %></span></a>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+        <h3>Here's some courses you should check out!</h3><br/>
         <div class="container container-fluid">
             <% for(var i = 0; i < results.length/3; i++) { %>
                 <div class="row">
