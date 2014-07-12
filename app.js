@@ -12,8 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -44,6 +43,7 @@ if (app.get('env') === 'development') {
             message: err.message,
             error: err
         });
+       console.log(err);
     });
 }
 
@@ -54,7 +54,9 @@ app.use(function(err, req, res, next) {
     res.render('error', {
         message: err.message,
         error: {}
+        
     });
+   console.log(err);
 });
 
 
