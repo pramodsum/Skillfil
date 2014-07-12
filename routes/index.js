@@ -45,4 +45,14 @@ router.get('/coursera', function(req, res) {
     });
 }) 
 
+router.get('/data', function(req, res) {
+    var skills = ['machine learning', 'ruby'];
+    suggestions.getAdvancedData(skills, function(results)
+    {
+        res.render('data', {
+            results: results
+        })
+    })
+})
+
 module.exports = router;
