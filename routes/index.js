@@ -4,6 +4,7 @@ var coursera = require('../apis/coursera');
 var suggestions = require('../apis/suggestions');
 
 var skill = "data science"
+var khan = require('../apis/khan');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -19,7 +20,16 @@ router.get('/google', function(req, res) {
             course: course 
         });
     });
-})
+});
+
+// a button should have action="/log-in"
+router.get('/khan', function(req, res) {
+    khan.searchKhan(skill, function(results) {
+        res.render('khan', {
+            topicTree: results
+        });
+    });
+});
 
 router.get('/suggestions', function(req, res) {
     suggestions.getCoursera(skill, function(results) {
