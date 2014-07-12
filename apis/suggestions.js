@@ -29,9 +29,8 @@ module.exports = {
         });
     },
 
-    getEducationSource : function(source, search, callback)
+    getEducationSource : function(endpoint, source, search, callback)
     {
-        var endpoint = "http://10.16.20.34:8080/BingSearch.aspx?query=";
         endpoint = endpoint.concat(source.split(' ').join('+'));
         endpoint += "+";
         endpoint = endpoint.concat(search.split(' ').join('+'));
