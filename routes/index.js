@@ -1,4 +1,13 @@
-var server = require("./server");
-var router = require("./router");
+var express = require('express');
+var router = express.Router();
 
-server.start(router.route);
+var hi = 'hello world'
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.render('index', { 
+  	title: 'Skillfil',
+  	text: hi
+  });
+});
+
+module.exports = router;
