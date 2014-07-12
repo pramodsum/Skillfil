@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: black;
+  /*background-color: black;*/
   margin: 0;
   padding: 0;
 }
@@ -24,7 +24,7 @@ body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
   /*background: #eaeaea url('bg.png');*/
-  color: #4d4d4d;
+  color: #eaeaea;
   /*width: 550px;*/
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
@@ -32,6 +32,10 @@ body {
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased;
+}
+
+.front-text {
+  font: 48px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -499,7 +503,7 @@ hr {
 h1 { font-family: 'end_of_the_dreamregular', Arial, sans-serif; }
 
 body { 
-  background: url(images/bg.png) no-repeat center center fixed; 
+  background: url(top.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
