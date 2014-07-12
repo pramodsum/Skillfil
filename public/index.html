@@ -20,7 +20,7 @@
     <script type="text/javascript">    
       function onLinkedInLoad() {       
         $('a[id*=li_ui_li_gen_]')
-        .html('<img src="http://press.linkedin.com/download-media/209" height="20" width="80px" border="0"/>');    
+        .html('<button type="button" class="btn btn-info btn-large"><div style="margin:0 auto; padding:5px;">Login with </div><img src="http://press.linkedin.com/download-media/209" height="20" width="80px" border="0"/></button>');    
       }
     </script>
   </head>
@@ -42,9 +42,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-                <button type="button" class="btn btn-info btn-xs"><div style="margin:0 auto;">Login with </div><script type="in/Login">
-                  Hello, <?js= firstName ?> <?js= lastName ?>.
-                </script></button>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -57,12 +54,12 @@
       <div id="body" align="center">
         <center class="well" style="background-color: rgba(245, 245, 245, 0.2); border-color: transparent;">
           <div class="front-text">
-            <img style="width: 150px; height: 150px; overflow:hidden;" src="http://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"src="..." alt="...">+
-            <img style="width: 150px; height: 150px; overflow:hidden;" src="/images/khan.png"src="..." alt="...">+
-            <img style="width: 150px; height: 150px; overflow:hidden;" src="/images/coursera.png"src="..." alt="...">
-          </div>
-<!--           <br/><br/><br/>
-          <button href="../views/suggestions.ejs"type="button" class="btn btn-default btn-lg">Begin</button> -->
+            <h3>
+              <p><script type="in/Login">
+                Welcome, <?js= firstName ?> <?js= lastName ?>.
+              </script></p><btn/>
+              <p class="btn" style="background-color: rgba(245, 245, 245, 0.5); border-color: transparent;"><a href="../suggestions">Let's begin</a></p>
+            </h3>
         </div>
       </center>
     </section>
