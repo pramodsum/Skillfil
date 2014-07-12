@@ -2,9 +2,13 @@ var express = require('express');
 var router = express.Router();
 var googleapis = require('googleapis');
 
+var hi = 'hello world'
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render('index', { title: 'Express' });
+  res.render('index', { 
+  	title: 'Skillfil',
+  	text: hi
+  });
 });
 
 router.get('/google', function(req, res) {
