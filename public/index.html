@@ -30,7 +30,7 @@
       }
       function onLinkedInAuth() {
         IN.API.Profile("me")
-        .fields("firstName", "lastName", "industry", "skills")
+        .fields("firstName", "lastName", "industry", "skills", "pictureUrl")
         .result(displayProfiles);
       }
     </script>

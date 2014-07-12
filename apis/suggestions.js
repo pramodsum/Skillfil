@@ -6,6 +6,27 @@
 
 var request = require("request");
 
+var io = require('socket.io')(3001);
+
+io.on('connection', function (socket) {
+    console.log("connected!");
+  io.emit('news', { will: 'be received by everyone'});
+
+  socket.on('private message', function (from, msg) {
+    console.log('I received a private message by ', from, ' saying ', msg);
+  });
+
+  
+
+  socket.on('profile', function(data){
+        profile = JSON.parse(data);
+        console.log(JSON.stringify(profile));
+      });
+
+  socket.on('disconnect', function () {
+    io.sockets.emit('user disconnected');
+  });
+});
 var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
 var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
 
