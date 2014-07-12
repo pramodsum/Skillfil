@@ -1,5 +1,6 @@
 html,
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
 }
@@ -41,7 +42,7 @@ input[type="checkbox"] {
 #todoapp {
 /*  background: #fff;
   background: rgba(255, 255, 255, 0.9);*/
-  margin: 200px 0 40px 0;
+  margin: 175px 0 40px 0;
   /*border: 1px solid #ccc;*/
   position: relative;
 /*  border-top-left-radius: 2px;
@@ -87,33 +88,24 @@ input[type="checkbox"] {
   text-rendering: optimizeLegibility;
 }
 
-/*#header {
-  padding-top: 15px;
-  border-radius: inherit;
-}*/
-
-/*#header:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 15px;
-  z-index: 2;
-  border-bottom: 1px solid #6c615c;
-  background: #8d7d77;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
-  background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
-  background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
-  border-top-left-radius: 1px;
-  border-top-right-radius: 1px;
-}*/
+#todoapp #body .tagline {
+  font-family: 'end_of_the_dreamregular', Arial, sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #b3b3b3;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.5);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
 
 #main {
   position: relative;
   z-index: 2;
-  border-top: 1px dotted #adadad;
 }
 
 #todo-list {
@@ -125,16 +117,6 @@ input[type="checkbox"] {
 #todo-list li {
   position: relative;
   font-size: 24px;
-  border-bottom: 1px dotted #ccc;
-}
-
-#todo-list li:last-child {
-  border-bottom: none;
-}
-
-#todo-list li.editing {
-  border-bottom: none;
-  padding: 0;
 }
 
 #todo-list li.editing .edit {
