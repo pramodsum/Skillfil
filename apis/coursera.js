@@ -11,7 +11,7 @@ module.exports = {
 
     // var SEARCH = 'machine learning';
 
-    getCoursera : function(SEARCH) 
+    getCoursera: function(SEARCH, callback) 
     {
         // Initializes API
         googleapis
@@ -21,26 +21,26 @@ module.exports = {
                 console.log('An error occured', err);
                 return;
             }
+            console.log(callback);
+
             // Sends request
-            launchSearch(client, SEARCH, function(err, response) {
+            module.exports.launchSearch(client, SEARCH, function(err, response) {
                 if (err) {
                     console.log('An error occure\d', err);
                     return;
                 }
                 // Got the response from custom search
                 if (response.items.length > 0) {
-                    console.log(response.items[0]);
-                    return response.items[0];
-                    res.render('coursera', {
-                        course: response.items[0]
-                    });
+                    console.log("asdfasdfasdf");
+                    callback(response.items[0]);
                 }
             });
         });
-    }
+    },
 
     // Sends the query to the API
-    launchSearch : function(client, query, callback) {
+    launchSearch : function(client, query, callback) 
+    {
         var req = client.customsearch.cse.list({cx: CX, q: query})
             .withApiKey(API_KEY);
         req.execute(function(err, response) {
