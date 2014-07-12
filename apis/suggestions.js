@@ -25,6 +25,9 @@ io.on('connection', function (socket) {
     io.sockets.emit('user disconnected');
   });
 });
+var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
+var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
+
 module.exports = {
 
     // var SEARCH = 'machine learning';
@@ -68,6 +71,24 @@ module.exports = {
             // console.log(json);
             callback(json);
         });
+    },
+
+    getAdvancedData : function(skills, callback)
+    {
+        var endpoint = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
+        endpoint = endpoint.concat(skills.join());
+
+        var results = new Array();
+        request({ uri: endpoint }, function(error, response, body) 
+        {
+            if(error) {
+                console.log(error);
+                return;
+            }
+            var json = JSON.parse(body);
+            // console.log(json);
+            callback(json);
+        });        
     }
 
 };

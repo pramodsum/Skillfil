@@ -4,6 +4,8 @@ var suggestions = require('../apis/suggestions');
 var khan = require('../apis/khan');
 
 var skill = "data science";
+var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
+var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -33,7 +35,7 @@ router.get('/suggestions', function(req, res) {
 })
 
 router.get('/coursera', function(req, res) {
-    suggestions.getEducationSource('coursera', skill, function(results) {
+    suggestions.getApiJsonResults(BING_ENDPOINT, 'coursera', skill, function(results) {
         // console.log(results);
         console.log(results[0]);
         console.log(results[1]);
@@ -42,5 +44,15 @@ router.get('/coursera', function(req, res) {
         })
     });
 }) 
+
+router.get('/data', function(req, res) {
+    var skills = ['machine learning', 'ruby'];
+    suggestions.getAdvancedData(skills, function(results)
+    {
+        res.render('data', {
+            results: results
+        })
+    })
+})
 
 module.exports = router;
