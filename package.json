@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "Skillfil",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,6 +13,20 @@
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
     "jade": "~1.3.0",
-    "stylus": "0.42.3"
-  }
+    "stylus": "0.42.3",
+    "nodemon": "^1.2.1"
+  },
+  "description": "Skillfil ========",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pramodsum/Skillfil.git"
+  },
+  "author": "pramodsum",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/pramodsum/Skillfil/issues"
+  },
+  "homepage": "https://github.com/pramodsum/Skillfil"
 }
