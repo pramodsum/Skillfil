@@ -24,7 +24,7 @@ body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
   /*background: #eaeaea url('bg.png');*/
-  color: #eaeaea;
+  /*color: #eaeaea;*/
   /*width: 550px;*/
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
@@ -76,8 +76,8 @@ input[type="checkbox"] {
 }
 
 #todoapp h1 {
-  position: absolute;
-  top: -120px;
+  position: relative;
+  /*top: -120px;*/
   width: 100%;
   font-size: 70px;
   font-weight: bold;

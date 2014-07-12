@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <!-- CSS overrides - remove if you don't need it -->
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <title>Skillfill</title>
 
 <!--
 var course = 
@@ -38,12 +45,43 @@ console.log(course);
 console.log(\n\n\n);
 </script>
 
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Skillfil</a>
+    </div>
 
-<h1> Welcome back, <%=course.title%>! </h1>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <script type="in/Login">
+            Hello, <?js= firstName ?> <?js= lastName ?>.
+          </script>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-<%-course.htmlSnippet%>
-
-<a href=<%=course.link%>> Link to Coursera course </a>
-
+<section id="todoapp">
+  <header id="header">
+        <h1> Welcome back, <%=course.title%>! </h1>
+    <center><div class="well text-center" style="width: 75%">
+        <%-course.htmlSnippet%>
+        <br/>
+        <a href=<%=course.link%>> Link to Coursera course </a>
+    </div></center>
+  </header>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="javascripts/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
