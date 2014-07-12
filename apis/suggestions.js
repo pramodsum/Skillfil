@@ -44,6 +44,7 @@ module.exports = {
             if(error) {
                 console.log(error);
             }
+            // console.log(body);
             var json = JSON.parse(body);
             var elements = json.elements;
             // console.log(elements);

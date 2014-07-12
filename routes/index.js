@@ -26,24 +26,26 @@ router.get('/khan', function(req, res) {
 router.get('/suggestions', function(req, res) {
     var skills = ['machine learning', 'ruby'];
     var skillSuggestions = new Array();
+    var results = new Array();
     suggestions.getAdvancedData(skills, function(results)
     {
         // var json = JSON.parse(results);
-        skillSuggestions = results['L1RankedSkills'];
+        skillSuggestions = results['L2RankedSkills'];
         // console.log(skillSuggestions);
         // searchResults = results;
         skillSuggestions.forEach(function(skill, index) {
             // console.log(skillSuggestions[i]);
-            suggestions.getCoursera(skill['SkillName'], function(results) {
-                console.log('RESULTS: ' + results);
+            suggestions.getCoursera(skill['SkillName'], function(courseSuggestions) {
+                // console.log('RESULTS: ' + courseSuggestions);
+                results[results.length] = (courseSuggestions);
             });
         });
         res.render('suggestions', {
             user: 'Heisenberg',
-            results: [],
+            results: results,
             skillSuggestions: skillSuggestions,
             course_url: 'https://www.coursera.org/course/'
-        });
+        })
     });
 });
 
