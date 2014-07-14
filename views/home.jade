@@ -2,71 +2,43 @@ extends layout
 block content
   //
      Logo 
-  h1#logo(style="font-size: 150px;") SkillFill
-  p.tagline Revolutionizing the way professionals learn
-  br 
-  br
-  br
-  //
-     About Us 
-  section#about.main.style3.dark.fullscreen
-    .content.container.small
-      header
-        h2 Why SkillFill?
-      p
-        | Ok, but why should I use SkillFill instead of just watching YouTube all day?
-      br
-    a.button.style2(href='#team') Brilliant! I wonder who made this!
-  //.
-     Team
-  section#team.main.style3.dark.fullscreen
-    .content.container.small
-      p
-        //
-             Highlight 
-        section.is-highlight
-          ul.special
-            li
-              a.ion-person(href='#')
-                //- span Sumedha Pramod
-            li
-              a.ion-person(href='#')
-                //- span Stewart Whiting
-            li
-              a.ion-person(href='#')
-                //- span Johnson Hseih
-            li
-              a.ion-person(href='#')
-                //- span Jordan Kunzaki
-            li
-              a.ion-person(href='#')
-                //- span Jeff Tian
-          header
-            h2 The Team
-            span.byline it contains: many items that seem important but actually aren’t
-          p
-            | Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu
-            br
-            | ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
-
-    a.button.style2(href='#login') Genius! Where do I sign up!
-  //
-     Login 
-  if !user
-    section#login.main.style1.dark.fullscreen
-      .content.container.small
-      h2 Let's get started!
-      br
-      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-        i.fa.fa-linkedin
-        | Sign in with LinkedIn
-  else
-    section#login.main.style3.dark.fullscreen
-      .content.container.small
-        if user.profile.picture
-          img(src='#{user.profile.picture}' class="img-circle" style="height: 10em")
-        else
-          img(src='#{user.gravatar(60)}')
-        h2 Welcome back #{user.profile.name || user.email || user.id}
-        br
-        a.button(href='/suggestions') Let's Begin
+  section
+      h1#logo(style="font-size: 150px;") SkillFill
+      p.tagline Revolutionizing the way professionals learn
+        center.box
+          form(action='//herokuapp.us8.list-manage.com/subscribe/post?u=924f051bc8d12bae14eb86217&id=0c8e94d61c', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate')
+            label(for='mce-EMAIL') Enter your email to join our exclusive invite list. 
+            input(type='email', value='', name='EMAIL', placeholder='email address', required='required')
+            button.button(class="btn btn-info btn-lg" type='submit', value='Subscribe', name='subscribe' style="top: 1em") Subscribe
+  //- //.
+  //-    Team
+  //- section#team.main.style3.dark.fullscreen
+  //-   .content.container.small
+  //-     p
+  //-       //
+  //-            Highlight 
+  //-       section.is-highlight
+  //-         ul.special
+  //-           li
+  //-             a.ion-person(href='#')
+  //-               //- span Sumedha Pramod
+  //-           li
+  //-             a.ion-person(href='#')
+  //-               //- span Stewart Whiting
+  //-           li
+  //-             a.ion-person(href='#')
+  //-               //- span Johnson Hseih
+  //-           li
+  //-             a.ion-person(href='#')
+  //-               //- span Jordan Kunzaki
+  //-           li
+  //-             a.ion-person(href='#')
+  //-               //- span Jeff Tian
+  //-         header
+  //-           h2 The Team
+  //-           span.byline it contains: many items that seem important but actually aren’t
+  //-         p
+  //-           | Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu
+  //-           br
+  //-           | ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
+  //- //

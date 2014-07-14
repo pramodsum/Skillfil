@@ -34,7 +34,7 @@
 				transition: none !important;
 			}
 
-	body,input,textarea,select {
+	body,input,textarea,select, label {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		font-size: 16pt;
@@ -327,12 +327,14 @@
 		
 			form label {
 				display: block;
+				color: white;
 			}
 		
 			form input[type="text"],
 			form input[type="password"],
 			form select,
-			form textarea {
+			form textarea,
+			input {
 				display: block;
 				width: 100%;
 				padding: 0.75em;
@@ -783,7 +785,8 @@
 		/*position: absolute;*/
 		left: 1em;
 		top: 0;
-		margin-bottom: -1em;
+		margin-top: -0.9em;
+		/*margin-bottom: 0.25em;*/
 		height: 3em;
 		line-height: 3em;
 		letter-spacing: -1px;
@@ -946,7 +949,7 @@
 		height: 5em;
 		line-height: 5em;
 		margin: 0;
-		background: #39454b;
+		/*background: #39454b;*/
 		color: #999;
 		color: rgba(185,186,187,0.5);
 		overflow: hidden;
@@ -1165,12 +1168,12 @@
 /*********************************************************************************/
 
 @font-face {
-    font-family: 'end_of_the_dreamregular';
-    src: url('../fonts/end_of_the_dream-webfont.eot');
-    src: url('../fonts/end_of_the_dream-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/end_of_the_dream-webfont.woff') format('woff'),
-         url('../fonts/end_of_the_dream-webfont.ttf') format('truetype'),
-         url('../fonts/end_of_the_dream-webfont.svg#end_of_the_dreamregular') format('svg');
+    font-family: 'always_in_my_heart';
+    src: url('../fonts/always_in_my_heart-webfont.eot');
+    src: url('../fonts/always_in_my_heart-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/always_in_my_heart-webfont.woff') format('woff'),
+         url('../fonts/always_in_my_heart-webfont.ttf') format('truetype'),
+         url('../fonts/always_in_my_heart-webfont.svg#always_in_my_heart') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -1184,4 +1187,14 @@
          url('../fonts/fineliner_script-webfont.svg#fineliner_script') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+.box {
+	/*background: url('../images/overlay.png');*/
+	background: rgba(50,50,50,0.8);
+	background-size: 256px 256px, cover;
+	border-radius: 10px;
+	background-attachment: fixed, fixed;
+	background-position: top left, bottom center;
+	/*background-repeat: repeat, no-repeat;*/
 }
