@@ -1198,3 +1198,13 @@
 	background-position: top left, bottom center;
 	/*background-repeat: repeat, no-repeat;*/
 }
+
+/*********************************************************************************/
+/* Mobile                                                                         */
+/*********************************************************************************/
+
+@media only screen and (max-width: 320px) {
+
+   h1#logo { font-size: 2rem; }
+
+}
