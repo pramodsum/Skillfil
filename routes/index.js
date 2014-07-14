@@ -13,7 +13,7 @@ var results= new Array();
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { 
-  	title: 'Skillfil'
+  	title: 'SkillFill'
   });
 });
 
