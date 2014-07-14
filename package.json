@@ -57,7 +57,8 @@
     "yui": "^3.17.2",
     "socket.io": "^1.0.6",
     "googleapis": "^0.8.0",
-    "lusca": "^1.0.1"
+    "lusca": "^1.0.1",
+    "debug": "^1.0.3"
   },
   "devDependencies": {
     "blessed": "0.0.33",
