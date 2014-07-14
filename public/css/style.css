@@ -2,6 +2,11 @@
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
 @import url('../lib/font-awesome.min.css');
 @import "lib/ionicons/ionicons";
+@import "lib/bootstrap/bootstrap";
+@import "lib/font-awesome/font-awesome";
+@import "lib/ionicons/ionicons";
+@import "lib/bootstrap-social";
+@import "themes/modern";
 
 /*********************************************************************************/
 /* Basic                                                                         */
@@ -49,9 +54,10 @@
 		}
 	h1 {
 	  font-family: 'fineliner_script', Arial, sans-serif;
-	  /*line-height: 40px;*/
+	  line-height: 40px;
 	  width: 100%;
 	  font-size: 70px;
+	  margin-top: -2px;
 	  font-weight: bold;
 	  text-align: center;
 	  color: white;
@@ -82,9 +88,8 @@
 
 	.tagline {
 	  font-size: 24px;
-	  text-align: center;/*
-	  margin-top: -10em;
-	  margin-bottom: 10em;*/
+	  text-align: center;
+	  margin-bottom: 1em;
 	  color: #b3b3b3;
 	  color: rgba(255, 255, 255, 0.9);
 	  text-shadow: -1px -1px rgba(0, 0, 0, 0.5);
@@ -280,7 +285,18 @@
 				border-left: 0;
 				padding-left: 0;
 				margin-left: 0;
+				color: ;
 			}
+/*
+		.dropdown {
+			color: black;
+		}
+			.dropdown a {
+				color: black;				
+			}
+				.dropdown a span {
+					color: black;
+				}*/
 
 		ul.actions {
 			cursor: default;
@@ -320,9 +336,9 @@
 				display: block;
 				width: 100%;
 				padding: 0.75em;
-				background: none;
-				border: solid 2px rgba(185,186,187,0.25);
-				color: inherit;
+				background: rgba(185,186,187,0.25);
+				border: solid 2px rgba(255,255,255,0.25);
+				color: white;
 				border-radius: 0.5em;
 				outline: none;
 
@@ -363,23 +379,23 @@
 			}
 
 			form .formerize-placeholder {
-				color: rgba(145,146,147,0.85) !important;
+				color: rgba(175,175,175,0.85) !important;
 			}
 
 			form ::-webkit-input-placeholder {
-				color: rgba(145,146,147,0.85) !important;
+				color: rgba(175,175,175,0.85) !important;
 			}
 
 			form :-moz-placeholder {
-				color: rgba(145,146,147,0.85) !important;
+				color: rgba(175,175,175,0.85) !important;
 			}
 
 			form ::-moz-placeholder {
-				color: rgba(145,146,147,0.85) !important;
+				color: rgba(175,175,175,0.85) !important;
 			}
 
 			form :-ms-input-placeholder {
-				color: rgba(145,146,147,0.85) !important;
+				color: rgba(175,175,175,0.85) !important;
 			}
 
 			form ::-moz-focus-inner {
@@ -626,11 +642,13 @@
 					}
 
 				.main.style3.primary {
-					background: #fff;
+					/*background: #fff;*/
+					color: white;
 				}
 			
 				.main.style3.secondary {
-					background: #f5f6f7;
+					/*background: #f5f6f7;*/
+					color: white;
 				}
 
 
@@ -765,6 +783,7 @@
 		/*position: absolute;*/
 		left: 1em;
 		top: 0;
+		margin-bottom: -1em;
 		height: 3em;
 		line-height: 3em;
 		letter-spacing: -1px;

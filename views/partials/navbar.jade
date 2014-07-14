@@ -1,39 +1,41 @@
 //
    Nav 
-nav#nav
-  ul
-    li
-      a(href='/').ion-home
-    li
-      if !user
-        a(href='/#login') Login
-      else
-        li.dropdown(class=title=='Account Management'?'active':undefined)
-          a.dropdown-toggle(href='#', data-toggle='dropdown')
-            | #{user.profile.name || user.email || user.id}&nbsp;
-            i.caret
-          ul.dropdown-menu
-            li
-              a(href='/profile')
-                span.ion-person
-                | Profile
-            li
-              a(href='/account')
-                span.ion-person
-                | Manage my account
-            li.divider
-            li
-              a(href='/logout')
-                span.ion.ion-log-out
-                |  Logout
-    li
-      a(href='/suggestions') Courses
-    li
-      a(href='/#about') About
-    li
-      a(href='/#team') Team
-    li
-      a(href='/contact') Contact
+nav#nav.navbar.navbar-fixed-top
+  .container
+    .navbar-header
+      ul
+        li
+          a(href='/').ion-home
+        li
+          if !user
+            a(href='/#login') Login
+          else
+            li.dropdown(class=title=='Account Management'?'active':undefined)
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | #{user.profile.name || user.email || user.id}&nbsp;
+                i.caret
+              ul.dropdown-menu
+                li(class="dropdown")
+                  a(href='/profile' style="color: black; text-shadow: none;")
+                    span.ion-person
+                    | Profile
+                li
+                  a(href='/account' style="color: black; text-shadow: none;")
+                    span.ion-person
+                    | Manage my account
+                li.divider
+                li
+                  a(href='/logout' style="color: black; text-shadow: none;")
+                    span.ion.ion-log-out
+                    |  Logout
+        li
+          a(href='/suggestions') Courses
+        li
+          a(href='/#about') About
+        li
+          a(href='/#team') Team
+        li
+          a(href='/contact') Contact
 //- .navbar.navbar-default.navbar-fixed-top
 //-   .container
 //-     .navbar-header
