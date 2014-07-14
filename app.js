@@ -18,6 +18,13 @@ var flash = require('express-flash');
 var path = require('path');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
+var ua = require('universal-analytics');
+
+/**
+ * Google Analytics
+ */
+var visitor = ua('UA-52808206-1', '6a14abda-6b12-4578-bf66-43c754eaeda9');
+visitor.pageview("/", "Welcome", "http://skillfill.herokuapp.com/").send();
 
 /**
  * Controllers (route handlers).
