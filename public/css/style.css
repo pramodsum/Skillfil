@@ -786,7 +786,7 @@
 		left: 1em;
 		top: 0;
 		margin-top: -0.9em;
-		/*margin-bottom: 0.25em;*/
+		margin-bottom: -1em;
 		height: 3em;
 		line-height: 3em;
 		letter-spacing: -1px;
