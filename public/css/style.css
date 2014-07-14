@@ -949,7 +949,7 @@
 /*********************************************************************************/
 	
 	#footer {
-		position: relative;
+		position: absolute;
 		height: 5em;
 		line-height: 5em;
 		margin: 0;
