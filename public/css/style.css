@@ -69,6 +69,10 @@
 	  -o-text-rendering: optimizeLegibility;
 	  text-rendering: optimizeLegibility;
 	}
+
+	h1#logo {
+		font-size: 15rem;
+	}
 		
 	h2 {
 		font-size: 2.25em;
