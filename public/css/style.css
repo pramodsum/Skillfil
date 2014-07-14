@@ -949,7 +949,7 @@
 		height: 5em;
 		line-height: 5em;
 		margin: 0;
-		/*background: #39454b;*/
+		background: transparent;
 		color: #999;
 		color: rgba(185,186,187,0.5);
 		overflow: hidden;
