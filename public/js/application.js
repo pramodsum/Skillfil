@@ -20,3 +20,4 @@
 //= require skel.min
 //= require init
 //= require main
+//= require lib/packery.pkgd

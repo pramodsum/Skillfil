@@ -1,0 +1,17 @@
+extends layout
+block content
+  section#todoapp.main.style3.dark.fullscreen
+    .content.container.big
+      .courses
+        h1 Welcome 
+        center.well(style='background-color: rgba(245, 245, 245, 0.2); border-color: transparent;')
+          h3
+            | Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
+          br
+          - for (var i=0; i<skillSuggestions.length; i++)
+            a(href="#" data-toggle="modal" data-target="#myModal") i
+              //- span.label.label-success #{skillSuggestions[i]['SkillName']}
+          .container.container-fluid
+          h3 Here's some courses you should check out!
+          br
+          //- .container.container-fluid

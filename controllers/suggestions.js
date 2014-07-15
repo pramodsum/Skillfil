@@ -2,7 +2,7 @@
  * GET /
  * Suggestions Page
  */
- var express = require('express');
+var express = require('express');
 var router = express.Router();
 var suggestions = require('../apis/suggestions');
 var khan = require('../apis/khan');
@@ -17,6 +17,10 @@ var skills = ['information retrieval', 'python', 'java', 'data mining', 'c++', '
 
 suggestions.getAdvancedData(skills, function(temp)
 {
+    if(temp.length == 0) {
+        console.log('ERROR: Server returned 0 skills');
+        return;
+    }
     // var json = JSON.parse(results);
     skillSuggestions = temp['L2RankedSkills'];
     console.log(skillSuggestions);
@@ -24,6 +28,10 @@ suggestions.getAdvancedData(skills, function(temp)
 })
 
 suggestions.getCoursera(skill, function(no2) {
+    if(no2.length == 0) {
+        console.log('ERROR: Server returned 0 courses');
+        return;
+    }
     console.log(skillSuggestions.length);
     results = no2;
 });
@@ -36,9 +44,15 @@ suggestions.getCoursera(skill, function(no2) {
 //         })
 //     })
 
-exports.index = function(req, res) {
-  res.render('home', {
-    title: 'Home',
+
+/**
+ * GET /suggestions
+ * Course/Skill Suggestions Page
+ */
+
+exports.getSuggestions = function(req, res) {
+  res.render('suggestions', {
+    title: 'Suggestions',
     user: 'Sumedha',
     results: results,
     skillSuggestions: skillSuggestions,
