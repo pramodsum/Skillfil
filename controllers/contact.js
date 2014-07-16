@@ -1,10 +1,10 @@
 var secrets = require('../config/secrets');
 var nodemailer = require("nodemailer");
 var smtpTransport = nodemailer.createTransport('SMTP', {
-  service: 'SendGrid',
+  service: 'Mandrill',
   auth: {
-    user: secrets.sendgrid.user,
-    pass: secrets.sendgrid.password
+    user: secrets.mandrill.user,
+    pass: secrets.mandrill.password
   }
 });
 
@@ -43,7 +43,7 @@ exports.postContact = function(req, res) {
   var name = req.body.name;
   var body = req.body.message;
   var to = 'your@email.com';
-  var subject = 'Contact Form | Hackathon Starter';
+  var subject = 'Contact Form | SkillFill';
 
   var mailOptions = {
     to: to,
@@ -57,7 +57,7 @@ exports.postContact = function(req, res) {
       req.flash('errors', { msg: err.message });
       return res.redirect('/contact');
     }
-    req.flash('success', { msg: 'Email has been sent successfully!' });
+    req.flash('success', { msg: 'Email has been sent successfully! The SkillFill Team will be in touch!' });
     res.redirect('/contact');
   });
 };

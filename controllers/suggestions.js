@@ -15,27 +15,6 @@ var skillSuggestions = new Array();
 var results= new Array();
 var skills = ['information retrieval', 'python', 'java', 'data mining', 'c++', 'perl', 'linux', 'statistical'];
 
-suggestions.getAdvancedData(skills, function(temp)
-{
-    if(temp.length == 0) {
-        console.log('ERROR: Server returned 0 skills');
-        return;
-    }
-    // var json = JSON.parse(results);
-    skillSuggestions = temp['L2RankedSkills'];
-    console.log(skillSuggestions);
-    // searchResults = results;
-})
-
-suggestions.getCoursera(skill, function(no2) {
-    if(no2.length == 0) {
-        console.log('ERROR: Server returned 0 courses');
-        return;
-    }
-    console.log(skillSuggestions.length);
-    results = no2;
-});
-
 //     var skills = ['machine learning', 'ruby'];
 //     suggestions.getAdvancedData(skills, function(results)
 //     {
@@ -51,11 +30,30 @@ suggestions.getCoursera(skill, function(no2) {
  */
 
 exports.getSuggestions = function(req, res) {
-  res.render('suggestions', {
-    title: 'Suggestions',
-    user: 'Sumedha',
-    results: results,
-    skillSuggestions: skillSuggestions,
-    course_url: 'https://www.coursera.org/course/'
-  });
+    suggestions.getAdvancedData(skills, function(temp) {
+        if(temp.length == 0) {
+            console.log('ERROR: Server returned 0 skills');
+            return;
+        }
+        // var json = JSON.parse(results);
+        skillSuggestions = temp['L2RankedSkills'];
+        console.log(skillSuggestions);
+        // searchResults = results;
+    })
+
+    suggestions.getCoursera(skill, function(no2) {
+        if(no2.length == 0) {
+            console.log('ERROR: Server returned 0 courses');
+            return;
+        }
+        console.log(skillSuggestions.length);
+        results = no2;
+    });
+    res.render('suggestions', {
+        title: 'Suggestions',
+        user: 'Sumedha',
+        results: results,
+        skillSuggestions: skillSuggestions,
+        course_url: 'https://www.coursera.org/course/'
+    });
 };

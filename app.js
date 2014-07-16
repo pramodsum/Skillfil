@@ -144,22 +144,11 @@ app.get('/suggestions', suggestionscontroller.getSuggestions);
  */
 
 app.get('/api', apiController.getApi);
-app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);
-app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getGithub);
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
 
 /**
  * OAuth sign-in routes.
  */
-
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/');
-});
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
@@ -178,5 +167,3 @@ app.use(errorHandler());
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
-
-module.exports = app;
