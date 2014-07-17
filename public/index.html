@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/custom.css">
     <link rel="stylesheet" href="/stylesheets/normalize.css">
+        <script type="text/javascript" src="javascripts/socket.io.js"></script>
+    <script type="text/javascript">
+      var btn = document.createElement("button");
+      var profile;
+      var socket = io.connect('http://localhost:3001');
+      socket.on('news', function (data) {
+          console.log(data);
+      });
+      socket.emit('profile', localStorage.profile);
+    </script>
    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
       api_key: 75l6isrvof1kpf
       onLoad: onLinkedInLoad
@@ -26,6 +36,20 @@
         // for(int i = 0; i < profiles.length; i++){
           console.log(profiles);//[i]);
           localStorage.profile = JSON.stringify(profiles.values[0]);
+
+          btn = document.createElement("input");
+          btn.setAttribute("formaction","/suggestions");
+          btn.setAttribute("type","submit");
+          var form = document.createElement("form");
+          var input = document.createElement("input");
+          input.value = {"skill": 0 };//JSON.stringify(profiles.values[0]);
+          input.type = "text";
+          form.appendChild(input);
+          form.appendChild(btn);
+          btn.click();
+
+
+
         // }
       }
       function onLinkedInAuth() {
