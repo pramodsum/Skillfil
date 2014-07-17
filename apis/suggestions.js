@@ -72,17 +72,17 @@
         var results = new Array();
         request({ uri: url }, function(error, response, body) {
             if(error) {
-                console.log(error);
+                //console.log(error);
                 return;
             }
             // console.log("Skills: " + skills);
-            console.log(body);
+            // console.log(body);
             var json = JSON.parse(body);
             var elements = json.elements;
             // console.log(elements);
             elements.forEach(function(el, index) {
                 results[results.length] = el;
-                console.log(el['name']);
+                //console.log(el['name']);
             });
             callback(results, function(res, tempResults, io){
                  io.on('connection', function (socket) {
@@ -95,9 +95,9 @@
 
                      socket.on('profile', function(data){
                          profile = JSON.parse(data);
-                         console.log(JSON.stringify(profile));
+                        // console.log(JSON.stringify(profile));
                          skills = grabSkills(profile);
-                         console.log(skills);
+                        // console.log(skills);
                          localStorage.setItem('skills', JSON.stringify(skills));
                          console.log("Getting skills: " + localStorage.getItem('skills'));
 
@@ -138,7 +138,7 @@
         request({ uri: endpoint }, function(error, response, body) 
         {
             if(error) {
-                console.log(error);
+                //console.log(error);
                 return;
             }
             var json = JSON.parse(body);
@@ -150,7 +150,7 @@
     getAdvancedData : function(skills, callback)
     {
         var endpoint = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
-        endpoint = endpoint.concat(skills.join());
+        endpoint = endpoint.concat(skills.join('+'));
 
         var results = new Array();
         request({ uri: endpoint }, function(error, response, body) 
@@ -160,11 +160,11 @@
                 return;
             }
             var json = JSON.parse(body);
-            // console.log(json);
+            console.log(json);
             callback(json);
         });        
     }
 
 };
 
-module.exports.skills = "java";
+

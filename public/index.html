@@ -16,10 +16,10 @@
       var btn = document.createElement("button");
       var profile;
       var socket = io.connect('http://localhost:3001');
-      socket.on('news', function (data) {
-          console.log(data);
-      });
-      socket.emit('profile', localStorage.profile);
+      // socket.on('news', function (data) {
+      //     console.log(data);
+      // });
+
     </script>
    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
       api_key: 75l6isrvof1kpf
@@ -36,7 +36,7 @@
         // for(int i = 0; i < profiles.length; i++){
           console.log(profiles);//[i]);
           localStorage.profile = JSON.stringify(profiles.values[0]);
-
+      socket.emit('profile', localStorage.profile);
           btn = document.createElement("input");
           btn.setAttribute("formaction","/suggestions");
           btn.setAttribute("type","submit");
