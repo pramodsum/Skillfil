@@ -101,12 +101,13 @@
                          localStorage.setItem('skills', JSON.stringify(skills));
                          console.log("Getting skills: " + localStorage.getItem('skills'));
 
-                        res.render('suggestions', {
-                            user: 'Heisenberg',
-                            results: tempResults,
-                            result: '',
-                            course_url: 'https://www.coursera.org/course/'
-                        });
+                         callback(tempResults)
+                        // res.render('suggestions', {
+                        //     user: 'Heisenberg',
+                        //     results: tempResults,
+                        //     result: '',
+                        //     course_url: 'https://www.coursera.org/course/'
+                        // });
 
         // module.exports = { };
 
