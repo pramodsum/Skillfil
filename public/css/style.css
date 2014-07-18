@@ -378,28 +378,14 @@
 				min-height: 8em;
 			}
 
-			form .formerize-placeholder {
-				color: rgba(175,175,175,0.85) !important;
-			}
-
-			form ::-webkit-input-placeholder {
-				color: rgba(175,175,175,0.85) !important;
-			}
-
-			form :-moz-placeholder {
-				color: rgba(175,175,175,0.85) !important;
-			}
-
-			form ::-moz-placeholder {
-				color: rgba(175,175,175,0.85) !important;
-			}
-
-			form :-ms-input-placeholder {
-				color: rgba(175,175,175,0.85) !important;
-			}
-
-			form ::-moz-focus-inner {
-				border: 0;
+			form .formerize-placeholder, 
+			form ::-webkit-input-placeholder, 
+			form :-moz-placeholder,
+			form ::-moz-placeholder,
+			form :-ms-input-placeholder,
+			form ::-moz-focus-inner 
+			 {
+				color: white !important;
 			}
 			
 	/* Tables */
@@ -943,7 +929,7 @@
 	
 	#footer {
 		position: relative;
-		height: 5em;
+		height: 4em;
 		line-height: 5em;
 		margin: 0;
 		background: #39454b;
