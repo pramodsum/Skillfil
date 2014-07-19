@@ -2,19 +2,13 @@ extends ../layout
 
 block content
   .page-header
+    //
+       Logo 
+    h1#logo(style="font-size: 150px; margin-top: -0.5em;") SkillFill
+    p.tagline Revolutionizing the way professionals learn
+    br
     h3 Sign in
-  form(method='POST')
-    //- input(type='hidden', name='_csrf', value=_csrf)
-    .col-sm-8.col-sm-offset-2
-      //- .form-group
-      //-   label.control-label(for='email') Email
-      //-   input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
-      //- .form-group
-      //-   label.control-label(for='password') Password
-      //-   input.form-control(type='password', name='password', id='password', placeholder='Password')
-      //- .form-group
-      //-   button.btn.btn-primary(type='submit')
-      //-     span.ion-android-hand
-      //-     | Login
-      //-   a.btn.btn-link(href='/forgot') Forgot your password?
-      //- a.btn.btn-block.btn-github.btn-social(href='/auth/github')
+  center 
+    a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin' style="width: 50%")
+      i.fa.fa-linkedin
+      | Sign in with LinkedIn

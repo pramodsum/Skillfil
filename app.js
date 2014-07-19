@@ -31,6 +31,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+// var linkedinController = require('./controllers/linkedin');
 var suggestionscontroller = require('./controllers/suggestions');
 // var visitor = ua('UA-52808206-1', '6a14abda-6b12-4578-bf66-43c754eaeda9');
 // visitor.pageview("/", "Welcome", "http://skillfill.herokuapp.com/").send();
@@ -141,6 +142,7 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/suggestions', suggestionscontroller.getSuggestions);
+// app.get('/linkedin', linkedinController.getProfile);
 
 /**
  * API examples routes.
