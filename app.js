@@ -21,6 +21,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
+// var ua = require('universal-analytics');
 
 /**
  * Controllers (route handlers).
@@ -31,6 +32,8 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var suggestionscontroller = require('./controllers/suggestions');
+// var visitor = ua('UA-52808206-1', '6a14abda-6b12-4578-bf66-43c754eaeda9');
+// visitor.pageview("/", "Welcome", "http://skillfill.herokuapp.com/").send();
 
 /**
  * API keys and Passport configuration.
