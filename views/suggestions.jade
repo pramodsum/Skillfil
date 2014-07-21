@@ -1,32 +1,5 @@
 extends layout
 block content
-<<<<<<< Updated upstream
-  section#todoapp.main.style3.dark.fullscreen
-    .content.container.big
-      .courses
-        h1 Welcome 
-        center.well(style='background-color: rgba(245, 245, 245, 0.2); border-color: transparent;')
-          .tagline Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
-          br
-          - for (var i=0; i<skillSuggestions.length; i++)
-            a(href="#" data-toggle="modal" data-target="#myModal") i
-              span.label.label-success #{skillSuggestions[i]['SkillName']}
-          .container.container-fluid
-            .tagline Here's some courses you should check out!
-            br
-            .container.container-fluid
-              - for (var i=0; i<results.length/3; i++)
-                .row
-                  - for (var j=0; j<3; j++)
-                    .col-sm-3.panel.panel-defaults
-                      .panel-body
-                        //- img(src='#{results[i*3+j]['smallIcon']}', class="img-responsive")
-                        p(style="color: black") 
-                          strong #{results[i*3+j]['name']}
-                        //- p(class="text-justify") #{results[i*3+j]['shortDescription']}
-
-                        //- span.label.label-success #{results[i*3+j]}
-=======
   section#todoapp.main.style3.dark.fullscreen.content.container.big.courses
     h1 Welcome  
     center.well(style='background-color: rgba(245, 245, 245, 0.2); border-color: transparent;')
@@ -50,5 +23,3 @@ block content
                       strong
                         //- a(href='#{results[i*3+j]['shortName']}') #{results[i*3+j]['name']}
                     //- p(class="text-justify") #{results[i*3+j]['shortDescription']}
-                    
->>>>>>> Stashed changes
