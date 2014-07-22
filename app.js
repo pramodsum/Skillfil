@@ -104,8 +104,9 @@ app.use(function(req, res, next) {
   csrf(req, res, next);
 });
 app.use(function(req, res, next) {
-  // Make user object available in templates.
+  // Make model objects are available in templates.
   res.locals.user = req.user;
+  res.locals.course = req.course;
   next();
 });
 app.use(function(req, res, next) {

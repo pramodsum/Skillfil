@@ -1,6 +1,6 @@
 extends layout
 block content
-  section#todoapp.main.style3.dark.fullscreen.content.container.big.courses
+  section#todoapp.main.style3.fullscreen.content.container.big.courses
     h1 Welcome  
     center.well(style='background-color: rgba(245, 245, 245, 0.2); border-color: transparent;')
       p
@@ -15,11 +15,12 @@ block content
         p
           - for (var i=0; i<results.length/3; i++)
             .row
-              - for (var j=0; j<3; j++)
-                .col-sm-3.panel.panel-defaults
-                  .panel-body
-                    //- img(src='#{results[i*3+j]['smallIcon']}', class="img-responsive")
-                    p 
-                      strong
-                        //- a(href='#{results[i*3+j]['shortName']}') #{results[i*3+j]['name']}
-                    //- p(class="text-justify") #{results[i*3+j]['shortDescription']}
+              center
+                - for (var j=0; j<3; j++)
+                  .col-sm-3(style="padding: 5px")
+                    .panel.panel-defaults.panel-body
+                      img(src='#{results[i*3+j].smallIcon}', class="img-responsive")
+                      p 
+                        strong
+                          a(href='#{results[i*3+j].shortName}', style="color: black") #{results[i*3+j].name}
+                      div(class="text-justify") #{results[i*3+j].shortDescription}

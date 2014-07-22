@@ -5,11 +5,8 @@
  */
 
  var request = require("request");
-
  var localStorage = require('localStorage');
-
-
-
+ var Course = require('../models/Course');
 
  var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
  var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
@@ -81,8 +78,8 @@
             var elements = json.elements;
             // console.log(elements);
             elements.forEach(function(el, index) {
-                results[results.length] = el;
-                //console.log(el['name']);
+                results[results.length] = new Course(el);
+                console.log(el);
             });
             callback(results, function(res, tempResults, io){
                  io.on('connection', function (socket) {
