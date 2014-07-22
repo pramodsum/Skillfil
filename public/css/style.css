@@ -12,6 +12,29 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.packery {
+}
+
+/* clearfix */
+.packery:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.item {
+  width: 32%;
+  float: left;
+}
+
 	body {
 	  background: url(../images/top.png) no-repeat center center fixed; 
 	  -webkit-background-size: cover;
@@ -172,12 +195,13 @@
 	}
 
 	.panel {
+		margin: 0.25em;
 		background-color: rgba(255, 255, 255, 0.5); 
 		border-color: transparent;
 	}
-	.col:not(:first-child,:last-child) {
-	  padding-right:7px;
-	  padding-left:7px;
+
+	.panel-body {
+		line-height: 20px;
 	}
 
 	/* Sections/Articles */
