@@ -648,6 +648,9 @@ body { font-family: sans-serif; }
 						.main.style2.inactive.right .content {
 							left: 100%;
 						}
+			.subcontent {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
 		
 			.main.style3 {
 				text-align: center;
@@ -659,6 +662,7 @@ body { font-family: sans-serif; }
 				}
 
 				.main.style3 .content {
+					text-shadow: -0.75px -0.75px rgba(0, 0, 0, 1);
 				}
 
 					.main.style3 .content > header {

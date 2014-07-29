@@ -4,5 +4,4 @@
 node_modules
 
 *.log
-
 newrelic_agent.log
