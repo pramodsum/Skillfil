@@ -20,21 +20,6 @@
 
 body { font-family: sans-serif; }
 
-.packery {
-}
-
-/* clearfix */
-.packery:after {
-  content: ' ';
-  display: block;
-  clear: both;
-}
-
-.item {
-  width: 32%;
-  float: left;
-}
-
 	body {
 	  background: url(../images/top.png) no-repeat center center fixed; 
 	  -webkit-background-size: cover;
@@ -826,7 +811,7 @@ body { font-family: sans-serif; }
 			font-size: 1.25em;
 		}
 	
-	#nav {
+	#navbar {
 		position: absolute;
 		right: 0.5em;
 		top: 0;
@@ -834,17 +819,17 @@ body { font-family: sans-serif; }
 		line-height: 3em;
 	}
 
-		#nav ul {
+		#navbar ul {
 			margin: 0;
 		}
 
-			#nav ul li {
+			#navbar ul li {
 				display: inline-block;
 				margin-left: 0.5em;
 				font-size: 0.9em;
 			}
 			
-				#nav ul li a {
+				#navbar ul li a {
 					display: block;
 					color: #b3b3b3;
 					color: rgba(255, 255, 255, 0.8);
@@ -1219,3 +1204,26 @@ body { font-family: sans-serif; }
     font-weight: normal;
     font-style: normal;
 }
+
+/*********************************************************************************/
+/* Nav Pills                                                                     */
+/*********************************************************************************/
+.nav-pills > li > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    padding: 0;
+}
+
+.nav-pills > li > a:hover, .nav-pills > li > a:focus {
+	color: #39454b;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	color: #ffffff;
+	background-color: rgba(57, 69, 75, 0.7);
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+ 

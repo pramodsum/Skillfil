@@ -10,18 +10,29 @@ block content
           - for (var i=0; i<skillSuggestions.length; i++)
             a(href="#" data-toggle="modal" data-target="#myModal") i
               span.label.label-success #{skillSuggestions[i]['SkillName']}
-      div.packery.js-packery(data-packery-options='{ colWidth: 32% }')
-          div.gutter-sizer
-          div.grid-sizer
-          span.tagline Here's some courses you should check out!
-          p
-            - for (var i=0; i<results.length/3; i++)
-              - for (var j=0; j<3; j++)
-                div.item
+      p
+        span.tagline Here's some courses you should check out!
+        div.row
+          div.col-xs-3
+            ul#myTabs.nav.nav-pills.nav-stacked
+              li.active
+                a(href='#coursera', data-toggle='pill') Coursera
+              li
+                a(href='#profile', data-toggle='pill') Profile
+              li
+                a(href='#messages', data-toggle='pill') Messages
+          // Content
+          div.col-xs-9
+            .tab-content
+              #coursera.tab-pane.fade-in.active
+                - for (var i=0; i<results.length; i++)
                   .panel.panel-body
-                    p.text-center
-                      img(src='#{results[i*3+j].smallIcon}', class="img-responsive")
-                    p.text-center
+                    .col-sm-4.text-center.vcenter 
+                      center
+                        img(src='#{results[i].smallIcon}', class="img-responsive")
+                    .col-sm-8.text-center.vcenter 
                       strong
-                        a(href='#{results[i*3+j].shortName}', style="color: black") #{results[i*3+j].name}
-                    div.text-left #{results[i*3+j].shortDescription}
+                        a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
+                      div.text-left #{results[i].shortDescription} 
+              #profile.tab-pane.fade-in content Profile
+              #messages.tab-pane.fade-in content Messages
