@@ -6,6 +6,8 @@ var express = require('express');
 var router = express.Router();
 var suggestions = require('../apis/suggestions');
 var khan = require('../apis/khan');
+var util = require('util');
+var User = require('../models/User');
 
 var skill = "information retrieval";
 var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
@@ -37,7 +39,7 @@ exports.getSuggestions = function(req, res) {
         }
         // var json = JSON.parse(results);
         skillSuggestions = temp['L2RankedSkills'];
-        console.log(skillSuggestions);
+//        console.log(skillSuggestions);
         // searchResults = results;
     })
 
@@ -46,12 +48,13 @@ exports.getSuggestions = function(req, res) {
             console.log('ERROR: Server returned 0 courses');
             return;
         }
-        console.log(skillSuggestions.length);
+//        console.log(skillSuggestions.length);
         results = no2;
     });
+//    console.log('req: ' + util.inspect(req));
     res.render('suggestions', {
         title: 'Suggestions',
-        user: 'Sumedha',
+        user: req.user,
         results: results,
         skillSuggestions: skillSuggestions,
         course_url: 'https://www.coursera.org/course/'

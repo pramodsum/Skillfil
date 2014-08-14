@@ -79,7 +79,7 @@
             // console.log(elements);
             elements.forEach(function(el, index) {
                 results[results.length] = new Course(el);
-                console.log(el);
+//                console.log(el);
             });
             callback(results, function(res, tempResults, io){
                  io.on('connection', function (socket) {
@@ -158,7 +158,7 @@
                 return;
             }
             var json = JSON.parse(body);
-            console.log(json);
+//            console.log(json);
             callback(json);
         });        
     }

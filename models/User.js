@@ -9,6 +9,9 @@ var userSchema = new mongoose.Schema({
   instagram: String,
   linkedin: String,
   tokens: Array,
+  current_course: Array,
+  completed_courses: Array,
+  friends: Array,
 
   profile: {
     name: { type: String, default: '' },

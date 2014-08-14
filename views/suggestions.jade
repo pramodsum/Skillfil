@@ -1,7 +1,7 @@
 extends layout
 block content
   section#todoapp.main.style3.fullscreen.content.container.big.courses
-    h1 Welcome  
+    h1 Course Suggestions
     center.well
       p
         p
@@ -16,6 +16,8 @@ block content
               li.active
                 a(href='#suggestions', data-toggle='pill') Suggested
               li
+                a(href='#current', data-toggle='pill') Current
+              li
                 a(href='#completed', data-toggle='pill') Completed
               li
                 a(href='#friends', data-toggle='pill') Friends & Coworkers
@@ -27,10 +29,30 @@ block content
                   .panel.panel-body
                     .col-sm-4.text-center.vcenter 
                       center
-                        img(src='#{results[i].smallIcon}', class="img-responsive")
+                        p
+                            img(src='#{results[i].smallIcon}', class="img-responsive")
                     .col-sm-8.text-center.vcenter 
                       strong
                         a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
                       div.text-left #{results[i].shortDescription} 
+              #current.tab-pane.fade-in content Profile
+                - for (var i=0; i< user.current.length; i++)
+                  .panel.panel-body
+                    .col-sm-4.text-center.vcenter 
+                      center
+                        img(src='#{user.current[i].smallIcon}', class="img-responsive")
+                    .col-sm-8.text-center.vcenter 
+                      strong
+                        a(href='#{user.current[i].shortName}', style="color: black") #{user.current[i].name}
+                      div.text-left #{user.current[i].shortDescription} 
               #completed.tab-pane.fade-in content Profile
+                - for (var i=0; i< user.current.length; i++)
+                  .panel.panel-body
+                    .col-sm-4.text-center.vcenter 
+                      center
+                        img(src='#{user.completed[i].smallIcon}', class="img-responsive")
+                    .col-sm-8.text-center.vcenter 
+                      strong
+                        a(href='#{user.completed[i].shortName}', style="color: black") #{user.completed[i].name}
+                      div.text-left #{user.completed[i].shortDescription} 
               #friends.tab-pane.fade-in content Messages

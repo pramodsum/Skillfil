@@ -45,7 +45,9 @@
     "socket.io": "^1.0.6",
     "uglify-js": "^2.4.14",
     "validator": "^3.16.1",
-    "yui": "^3.17.2"
+    "yui": "^3.17.2",
+    "to-locals": "^0.1.2",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "blessed": "0.0.33",
