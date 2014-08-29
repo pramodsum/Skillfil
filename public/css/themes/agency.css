@@ -290,8 +290,8 @@ header .intro-text {
 
 @media(min-width:1120px) {
     header .intro-text {
-        padding-top: 3em;
-        padding-bottom: 3em;
+        padding-top: 3.5em;
+        padding-bottom: 2.5em;
     }
 }
 
@@ -659,7 +659,9 @@ section h3.section-subheading {
 
 .login-btn {
     width: 100%;
-    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 20px;
+    text-align: center;
 }
 
 .btn-linkedin {
@@ -676,6 +678,7 @@ section h3.section-subheading {
     font-size: 15px;
     line-height: 1.42857143;
     height: 43px;
+    width: auto;
     border-radius: 4px;
     -webkit-user-select: none;
     -moz-user-select: none;
