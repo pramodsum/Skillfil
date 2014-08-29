@@ -620,6 +620,10 @@ ul.special a.ion-person {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.fa-team {
+    padding-left: 15%;
+    padding-top: 20%;
+}
 
 body {
     padding-top: 3em;

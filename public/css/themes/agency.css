@@ -18,12 +18,12 @@ body {
 }
 
 p {
-    font-size: 14px;
+    font-size: 0.75em;
     line-height: 1.75;
 }
 
 p.large {
-    font-size: 16px;
+    font-size: 0.85em;
 }
 
 a,
@@ -345,7 +345,7 @@ section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     font-style: italic;
     font-weight: 400;
 }
