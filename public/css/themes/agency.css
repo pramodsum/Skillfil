@@ -282,8 +282,8 @@ header {
 }
 
 header .intro-text {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10%;
+    padding-bottom: 200px;
 }
 
 header .intro-text img {
@@ -308,7 +308,6 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 50px;
         padding-bottom: 200px;
     }
 
