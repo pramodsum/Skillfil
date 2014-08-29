@@ -247,6 +247,7 @@ fieldset[disabled] .btn-xl.active {
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
+        padding-right: 15px;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
@@ -267,6 +268,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
+        padding-right: 15px;
         background-color: #222;
     }
 
@@ -293,40 +295,18 @@ header .intro-text img {
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    line-height: 22px;
+    font-size: 36px;
+    font-style: italic;
+    line-height: 1;
 }
 
 header .intro-text .intro-heading {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 75px;
     font-weight: 700;
-    line-height: 50px;
-}
-
-@media(min-width:768px) {
-    header .intro-text {
-        padding-bottom: 200px;
-    }
-
-    header .intro-text .intro-lead-in {
-        margin-bottom: 25px;
-        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
-        font-style: italic;
-        line-height: 40px;
-    }
-
-    header .intro-text .intro-heading {
-        margin-bottom: 50px;
-        text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 75px;
-        font-weight: 700;
-        line-height: 75px;
-    }
+    line-height: 1;
 }
 
 section {
@@ -908,20 +888,21 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #fed136;
 }
-
-@media (min-width: 1200px)
-.container {
-    width: 1170px;
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
 }
-@media (min-width: 992px)
-.container {
-    width: 970px;
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
 }
-@media (min-width: 768px)
-.container {
-    width: 750px;
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
 }
-
 /*
  * Social Buttons for Bootstrap
  *
