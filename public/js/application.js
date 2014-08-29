@@ -18,6 +18,9 @@
 //= require jquery.poptrox.min
 //= require jquery.min
 //= require skel.min
+//= require lib/packery.pkgd.min
+//= require agency/cbpAnimatedHeader
+//= require agency/classie
+//= require agency/jqBootstrapValidation
 //= require init
 //= require main
-//= require lib/packery.pkgd.min

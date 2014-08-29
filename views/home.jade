@@ -1,75 +1,84 @@
 extends layout
 block content
-  //
-     Logo 
-  h1#logo(style="font-size: 150px;") SkillFill
-  p.tagline Revolutionizing the way professionals learn
-  br 
-  br
-  br
-  //
-     About Us 
-  section#about.main.style3.dark.fullscreen
-    .content.container.small
-      header
-        h2 Why SkillFill?
-        //- blockquote?
-        span.byline "We shall have no better conditions in the future if we are satisfied with all those which we have at present." - Thomas Edison
-      p As professionals, we always strive to . At SkillFill, we are dedicated to providing professionals with the tools they need to get to the next level. Each user's skills are individually analyzed gainst the job market for new relevant and valuable skills. We strive to ensure that our users are provided with the courses and books they need to ... Whether it be looking for employment or promotions, not knowing where and how to learn the related skills will never be a problem again. 
-      br
-    a.button.style2(href='#team') Brilliant! I wonder who made this!
-  //.
-     Team
-  
-  section#team.main.style3.dark.fullscreen
-    .content.container.big
-      p
+    //
+         Header 
+    header
+      .container
+        .intro-text
+            div.well
+                img(src="logos/skillfill_logo.png").img-responsive
+                .intro-lead-in Revolutionizing the way professionals learn
+                a.page-scroll.btn.btn-xl(href='#about') Tell Me More
+    .sections
         //
-             Highlight 
-        section.is-highlight
-          ul.special
-            li
-              a.ion-person(href='#')
-              span Sumedha Pramod
-            li
-              a.ion-person(href='#')
-              span Stewart Whiting
-            li
-              a.ion-person(href='#')
-              span Jordan Kunzika
-            li
-              a.ion-person(href='#')
-              span Johnson Hseih
-            li
-              a.ion-person(href='#')
-              span Jeff Tian
-          header
-            h2 The Team
-            //- span.byline it contains: many items that seem important but actually aren’t
-          p
-            | Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu
-            br
-            | ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
-
-    a.button.style2(href='#login') Genius! Where do I sign up!
-  //
-     Login 
-  if !user
-    section#login.main.style1.dark.fullscreen
-      .content.container.small
-      h2 Let's get started!
-      br
-      center 
-        a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin' style="width: 50%")
-          i.fa.fa-linkedin
-          | Sign in with LinkedIn
-  else
-    section#login.main.style3.dark.fullscreen
-      .content.container.small
-        if user.profile.picture
-          img(src='#{user.profile.picture}' class="img-circle" style="height: 10em")
-        else
-          img(src='#{user.gravatar(60)}')
-        h2 Welcome back #{user.profile.name || user.email || user.id}
-        br
-        a.button(href='/suggestions') Let's Begin
+           About Section 
+        section#about
+          .container
+            .row
+              .col-lg-12.text-center
+                h2.section-heading Why SkillFill?
+                h3.section-subheading.text-muted SkillFill aims to nurture professionals by providing them with the skills they need today to fulfill their dreams of tomorrow. 
+                p As professionals, we always strive to . At SkillFill, we are dedicated to providing professionals with the tools they need to get to the next level. Each user's skills are individually analyzed gainst the job market for new relevant and valuable skills. We strive to ensure that our users are provided with the courses and books they need to ... Whether it be looking for employment or promotions, not knowing where and how to learn the related skills will never be a problem again. 
+        //
+           Team Section 
+        section#team.bg-light-gray
+          .container
+            .row
+              .text-center
+                h2.section-heading Our Amazing Team
+                h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            .row
+              .col-sm-4
+                .team-member
+                  img.img-responsive.img-circle(src='images/team/sumedha.jpeg', alt='')
+                  h4 Sumedha Pramod
+                  //- p.text-muted Lead Designer
+              .col-sm-4
+                .team-member
+                  img.img-responsive.img-circle(src='images/team/stewart.jpg', alt='')
+                  h4 Stewart Whiting
+                  //- p.text-muted Lead Designer
+              .col-sm-4
+                .team-member
+                  img.img-responsive.img-circle(src='images/team/jordan.jpg', alt='')
+                  h4 Jordan Kunzika
+                  //- p.text-muted Lead Designer
+            .row
+              .col-sm-2
+              .col-sm-4
+                .team-member
+                  img.img-responsive.img-circle(src='images/team/jeff.jpg', alt='')
+                  h4 Jeff Tian
+                  //- p.text-muted Lead Designer
+              .col-sm-4
+                .team-member
+                  img.img-responsive.img-circle(src='images/team/johnson.jpg', alt='')
+                  h4 Johnson Hseih
+                  //- p.text-muted Lead Designer
+              .col-sm-2
+            .row
+              .col-lg-8.col-lg-offset-2.text-center
+                p.large.text-muted
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+        //
+           Clients Aside 
+        section#login
+          .container
+            .row
+              //
+                 Login 
+              if !user
+                  h2 Let's get started!
+                  br
+                  div.login-btn
+                    a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+                        i.fa.fa-linkedin
+                        | Sign in with LinkedIn
+              else
+                if user.profile.picture
+                  img(src='#{user.profile.picture}' class="img-circle" style="height: 10em")
+                else
+                  img(src='#{user.gravatar(60)}')
+                h2 Welcome back #{user.profile.name || user.email || user.id}
+                br
+                a.button(href='/suggestions') Let's Begin
