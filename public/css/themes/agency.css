@@ -174,8 +174,22 @@ fieldset[disabled] .btn-xl.active {
     background-color: #222;
 }
 
+@font-face {
+  font-family: 'Chalkboard';
+  src: url('../fonts/Chalkboard.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalkboard';
+  src:  url(data:application/x-font-woff;charset=utf-8;base64,) format('woff'), url('../fonts/Chalkboard.ttf')  format('truetype'), url('../fonts/Chalkboard.svg#Chalkboard') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Chalkboard";
     color: #fed136;
 }
 
@@ -268,15 +282,18 @@ header {
 }
 
 header .intro-text {
-    padding-top: 90px;
+    padding-top: 50px;
     padding-bottom: 50px;
+}
+
+header .intro-text img {
+    padding-bottom: 15px;
 }
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 22px;
-    font-style: italic;
     line-height: 22px;
 }
 
@@ -291,7 +308,7 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 80px;
+        padding-top: 50px;
         padding-bottom: 200px;
     }
 
@@ -327,7 +344,7 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
