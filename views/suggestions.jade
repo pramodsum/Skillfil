@@ -1,36 +1,49 @@
 extends layout
 block content
-  section#todoapp.main.style3.fullscreen.content.container.big.courses
-    h1 Welcome  
-    center.well
-      p
+  //
+       Header
+  header
+    .container
+      .intro-text
+    h1 Suggestions
+  .sections
+    .container
+      .well
         p
-          span.tagline Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
-        p
-          - for (var i=0; i<skillSuggestions.length; i++)
-            a(href="#" data-toggle="modal" data-target="#myModal") i
-              span.label.label-success #{skillSuggestions[i]['SkillName']}
-        div.row
-          div.col-xs-3
-            ul#myTabs.nav.nav-pills.nav-stacked
-              li.active
-                a(href='#suggestions', data-toggle='pill') Suggested
-              li
-                a(href='#completed', data-toggle='pill') Completed
-              li
-                a(href='#friends', data-toggle='pill') Friends & Coworkers
-          // Content
-          div.col-xs-9
-            .tab-content
-              #suggestions.tab-pane.fade-in.active
-                - for (var i=0; i<results.length; i++)
+          p
+            span.tagline.suggestions Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
+          p
+            - for (var i=0; i<skillSuggestions.length; i++)
+              a(href="#" data-toggle="modal" data-target="#myModal") i
+                span.label.label-success #{skillSuggestions[i]['SkillName']}
+          hr
+          ul#myTabs.nav.nav-tabs(role='tablist')
+            li.active
+              a(href='#suggestions', data-toggle='pill') Suggested
+            li
+              a(href='#completed', data-toggle='pill') Completed
+            li
+              a(href='#friends', data-toggle='pill') Friends & Coworkers
+          .tab-content
+            #suggestions.tab-pane.fade.in.active
+              - for (var i=0; i<results.length; i++)
+                .col-xs-6
                   .panel.panel-body
-                    .col-sm-4.text-center.vcenter 
+                    .col-sm-4.text-center.vcenter
                       center
                         img(src='#{results[i].smallIcon}', class="img-responsive")
-                    .col-sm-8.text-center.vcenter 
+                    .col-sm-8.text-center.vcenter
                       strong
                         a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
-                      div.text-left #{results[i].shortDescription} 
-              #completed.tab-pane.fade-in content Profile
-              #friends.tab-pane.fade-in content Messages
+                      div.text-left #{results[i].shortDescription}
+                .col-xs-6
+                  .panel.panel-body
+                    .col-sm-4.text-center.vcenter
+                      center
+                        img(src='#{results[i].smallIcon}', class="img-responsive")
+                    .col-sm-8.text-center.vcenter
+                      strong
+                        a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
+                      div.text-left #{results[i].shortDescription}
+            #completed.tab-pane.fade content Profile
+            #friends.tab-pane.fade content Messages

@@ -9,10 +9,10 @@ $(function() {
     });
 });
 
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: 'nav'
-})
+//// Highlight the top nav as scrolling occurs
+//$('body').scrollspy({
+//    target: 'nav'
+//})
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
