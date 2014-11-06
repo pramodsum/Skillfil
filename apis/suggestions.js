@@ -65,7 +65,7 @@
     getCoursera: function(SEARCH, callback) 
     {
         var url = "https://api.coursera.org/api/catalog.v1/courses?fields=shortDescription,smallIcon,video&q=search&query=";
-        url = url.concat(SEARCH);
+        url = url.concat(SEARCH.join('+'));
         url = encodeURI(url);
         var results = [];
         request({ uri: url }, function(error, response, body) {

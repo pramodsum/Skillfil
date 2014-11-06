@@ -14,18 +14,21 @@ block content
       p
         p
           span.tagline.suggestions Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
-        p
-          - for (var i=0; i<skillSuggestions.length; i++)
-            a(href="#" data-toggle="modal" data-target="#myModal") i
-              span.label.label-success #{skillList}
+        center
+          ul.list-inline
+            - for (var i=0; i<skillSuggestions.length; i++)
+              li
+                span.label.label-info #{skillSuggestions[i]}
+            - if(i == 4) 
+              br
         hr
         ul#myTabs.nav.nav-tabs(role='tablist')
           li.active
             a(href='#suggestions', data-toggle='pill') Suggested
-          li
-            a(href='#completed', data-toggle='pill') Completed
-          li
-            a(href='#friends', data-toggle='pill') Friends & Coworkers
+          //- li
+          //-   a(href='#completed', data-toggle='pill') Completed
+          //- li
+          //-   a(href='#friends', data-toggle='pill') Friends & Coworkers
         .tab-content
           #suggestions.tab-pane.fade.in.active
             include suggestions/suggested

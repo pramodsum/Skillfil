@@ -13,8 +13,8 @@ var skill = "information retrieval";
 var BING_ENDPOINT = "http://10.16.20.34:8080/BingSearch.aspx?query=";
 var DATA_ENDPOINT = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
 
-var skillSuggestions = new Array();
-var results= new Array();
+var skillSuggestions = [];
+var results= [];
 var skills = ['information retrieval', 'python', 'data mining'];
 
 //     var skills = ['machine learning', 'ruby'];
@@ -46,29 +46,25 @@ exports.getSuggestions = function(req, res) {
             skillList.push(skillSuggestions[i]['Skill']);
         }
 
-        console.log(skillList);
-        skillList = _.uniq(skillList);
+        // console.log(skillList);
+        skillList = _.uniq(skillList.slice(0,9));
 
-        for(var i = 0; i < 10; i++) {
-            suggestions.getCoursera(skillList[i], function(no2) {
-                if(no2.length == 0) {
-                    console.log('ERROR: Server returned 0 courses');
-                    return;
-                }
+        suggestions.getCoursera(skillList, function(no2) {
+            if(no2.length == 0) {
+                console.log('ERROR: Server returned 0 courses');
+                return;
+            }
 
-                results = _.uniq(results.concat(no2));
-                console.log('Current # course results: %d', results.length);
+            results = _.uniq(results.concat(no2));
 
-                if(i == 9) {
-                    res.render('suggestions', {
-                        title: 'Suggestions',
-                        user: 'Sumedha',
-                        results: results,
-                        skillSuggestions: skillList,
-                        course_url: 'https://www.coursera.org/course/'
-                    });
-                }
+            // console.log("I IS HERE");
+            res.render('suggestions', {
+                title: 'Suggestions',
+                user: 'Sumedha',
+                results: results,
+                skillSuggestions: skillList,
+                course_url: 'https://www.coursera.org/course/'
             });
-        }
+        });
     });
 };
