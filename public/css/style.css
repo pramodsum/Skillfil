@@ -965,6 +965,10 @@ body.touch .poptrox-popup .closer {
   color: black !important;
 }
 
+.sections #login a {
+  color: white !important;
+}
+
 .social-buttons a{
   color: white !important;
 }

@@ -5,45 +5,31 @@ block content
   header
     .container
       .intro-text
-    h1 Suggestions
+        .container
+          br
+          img(src="logos/skillfill_logo.png").img-responsive
+          .intro-lead-in Revolutionizing the way professionals learn
   .sections
     .container
-      .well
+      p
         p
-          p
-            span.tagline.suggestions Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
-          p
-            - for (var i=0; i<skillSuggestions.length; i++)
-              a(href="#" data-toggle="modal" data-target="#myModal") i
-                span.label.label-success #{skillSuggestions[i]['SkillName']}
-          hr
-          ul#myTabs.nav.nav-tabs(role='tablist')
-            li.active
-              a(href='#suggestions', data-toggle='pill') Suggested
-            li
-              a(href='#completed', data-toggle='pill') Completed
-            li
-              a(href='#friends', data-toggle='pill') Friends & Coworkers
-          .tab-content
-            #suggestions.tab-pane.fade.in.active
-              - for (var i=0; i<results.length; i++)
-                .col-xs-6
-                  .panel.panel-body
-                    .col-sm-4.text-center.vcenter
-                      center
-                        img(src='#{results[i].smallIcon}', class="img-responsive")
-                    .col-sm-8.text-center.vcenter
-                      strong
-                        a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
-                      div.text-left #{results[i].shortDescription}
-                .col-xs-6
-                  .panel.panel-body
-                    .col-sm-4.text-center.vcenter
-                      center
-                        img(src='#{results[i].smallIcon}', class="img-responsive")
-                    .col-sm-8.text-center.vcenter
-                      strong
-                        a(href='#{results[i].shortName}', style="color: black") #{results[i].name}
-                      div.text-left #{results[i].shortDescription}
-            #completed.tab-pane.fade content Profile
-            #friends.tab-pane.fade content Messages
+          span.tagline.suggestions Hmmmm...Well according to my calculations, the following subjects are valuable for you to learn
+        p
+          - for (var i=0; i<skillSuggestions.length; i++)
+            a(href="#" data-toggle="modal" data-target="#myModal") i
+              span.label.label-success #{skillList}
+        hr
+        ul#myTabs.nav.nav-tabs(role='tablist')
+          li.active
+            a(href='#suggestions', data-toggle='pill') Suggested
+          li
+            a(href='#completed', data-toggle='pill') Completed
+          li
+            a(href='#friends', data-toggle='pill') Friends & Coworkers
+        .tab-content
+          #suggestions.tab-pane.fade.in.active
+            include suggestions/suggested
+          #completed.tab-pane.fade 
+            include suggestions/completed
+          #friends.tab-pane.fade 
+            include suggestions/friends

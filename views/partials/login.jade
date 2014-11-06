@@ -13,10 +13,11 @@ section#login
                 i.fa.fa-linkedin
                 | Sign in with LinkedIn
       else
-        if user.profile.picture
-          img(src='#{user.profile.picture}' class="img-circle" style="height: 10em")
-        else
-          img(src='#{user.gravatar(60)}')
-        h2 Welcome back #{user.profile.name || user.email || user.id}
-        br
-        a.button(href='/suggestions') Let's Begin
+        .text-center
+          if user.profile.picture 
+              img(src='#{user.profile.picture}' class="img-circle" style="height: 10em")
+          else
+            img(src='#{user.gravatar(60)}')
+          h2 Welcome back #{user.profile.name || user.email || user.id}
+          br
+          a.button(href='/suggestions') Let's Begin

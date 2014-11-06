@@ -1,0 +1,17 @@
+--2014-11-05 22:27:21--  http://sr-api.cloudapp.net/RelatedSkills.aspx?query=hadoop
+Resolving sr-api.cloudapp.net... 191.235.166.74
+Connecting to sr-api.cloudapp.net|191.235.166.74|:80... connected.
+HTTP request sent, awaiting response... Read error (Operation timed out) in headers.
+Retrying.
+
+--2014-11-05 22:47:03--  (try: 2)  http://sr-api.cloudapp.net/RelatedSkills.aspx?query=hadoop
+Connecting to sr-api.cloudapp.net|191.235.166.74|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 62356 (61K) [application/json]
+Saving to: 'RelatedSkills.aspx?query=hadoop'
+
+     0K .......... .......... .......... .......... .......... 82%  134K 0s
+    50K ..........                                            100% 3.02M=0.4s
+
+2014-11-05 22:48:43 (161 KB/s) - 'RelatedSkills.aspx?query=hadoop' saved [62356/62356]
+

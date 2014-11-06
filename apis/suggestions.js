@@ -65,11 +65,12 @@
     getCoursera: function(SEARCH, callback) 
     {
         var url = "https://api.coursera.org/api/catalog.v1/courses?fields=shortDescription,smallIcon,video&q=search&query=";
-        url = url.concat(SEARCH.split(' ').join('+'));
-        var results = new Array();
+        url = url.concat(SEARCH);
+        url = encodeURI(url);
+        var results = [];
         request({ uri: url }, function(error, response, body) {
             if(error) {
-                //console.log(error);
+                console.log('--ERROR--\n\n' + error);
                 return;
             }
             // console.log("Skills: " + skills);
@@ -79,15 +80,15 @@
             // console.log(elements);
             elements.forEach(function(el, index) {
                 results[results.length] = new Course(el);
-                console.log(el);
+                // console.log(el);
             });
             callback(results, function(res, tempResults, io){
                  io.on('connection', function (socket) {
-                     console.log("connected!");
+                     // console.log("connected!");
                      io.emit('news', { will: 'be received by everyone'});
 
                      socket.on('private message', function (from, msg) {
-                         console.log('I received a private message by ', from, ' saying ', msg);
+                         // console.log('I received a private message by ', from, ' saying ', msg);
                      });
 
                      socket.on('profile', function(data){
@@ -96,7 +97,7 @@
                          skills = grabSkills(profile);
                         // console.log(skills);
                          localStorage.setItem('skills', JSON.stringify(skills));
-                         console.log("Getting skills: " + localStorage.getItem('skills'));
+                         // console.log("Getting skills: " + localStorage.getItem('skills'));
 
                          callback(tempResults)
                         // res.render('suggestions', {
@@ -125,30 +126,17 @@
         });
     },
 
-    getEducationSource : function(source, search, callback)
-    {
-        var endpoint = "http://10.16.20.34:8080/BingSearch.aspx?query=";
-        endpoint = endpoint.concat(source.split(' ').join('+'));
-        endpoint += "+";
-        endpoint = endpoint.concat(search.split(' ').join('+'));
-        
-        var results = new Array();
-        request({ uri: endpoint }, function(error, response, body) 
-        {
-            if(error) {
-                //console.log(error);
-                return;
-            }
-            var json = JSON.parse(body);
-            // console.log(json);
-            callback(json);
-        });
-    },
-
     getAdvancedData : function(skills, callback)
     {
-        var endpoint = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
+        // var endpoint = "http://10.16.20.34:8080/LookupSkills.aspx?UserSkills="
+        // endpoint = endpoint.concat(skills.join('+'));
+
+        var endpoint = "http://sr-api.cloudapp.net/RelatedSkills.aspx?query="
         endpoint = endpoint.concat(skills.join('+'));
+        endpoint = endpoint.concat('&city=&country=us');
+        endpoint = encodeURI(endpoint);
+
+        console.log('URL: ' + endpoint);
 
         var results = new Array();
         request({ uri: endpoint }, function(error, response, body) 
@@ -158,9 +146,9 @@
                 return;
             }
             var json = JSON.parse(body);
-            console.log(json);
-            callback(json);
-        });        
+            // console.log(json['RelatedSkills']);
+            callback(json['RelatedSkills']);
+        }); 
     }
 
 };
