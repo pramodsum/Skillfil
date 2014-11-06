@@ -966,7 +966,15 @@ body.touch .poptrox-popup .closer {
 }
 
 .sections #login a {
-  color: white !important;
+  color: black !important;
+  background: #fed136 !important;
+}
+
+.sections #login a:hover, 
+.sections #login a:focus {
+  text-decoration: none;
+  color: #fed136 !important;
+  background: black !important;
 }
 
 .social-buttons a{
@@ -976,7 +984,6 @@ body.touch .poptrox-popup .closer {
 .social-buttons a:hover {
   color: black !important;
 }
-
 
 .team-member .img-responsive {
 /*  max-width: 30em;*/

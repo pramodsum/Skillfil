@@ -136,7 +136,7 @@
         endpoint = endpoint.concat('&city=&country=us');
         endpoint = encodeURI(endpoint);
 
-        console.log('URL: ' + endpoint);
+        // console.log('URL: ' + endpoint);
 
         var results = new Array();
         request({ uri: endpoint }, function(error, response, body) 
